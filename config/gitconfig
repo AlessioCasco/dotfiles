@@ -1,9 +1,8 @@
 [gist]
 	private = yes
 
-[user]
-    email   =
-    name    = AlessioCasco
+[include]
+    path = .gitconfig-local
 
 [alias]
     a   = apply
@@ -17,7 +16,6 @@
     ph  = push
     sh  = stash
     st  = status
-
 
 [color]
         diff = auto

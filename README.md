@@ -10,6 +10,8 @@ Copy and paste the following into your terminal/shell:
 `apt-get install zsh`
 `git clone --recursive git@github.com:AlessioCasco/dotfiles.git && cd dotfiles && ./install`
 
+Install will ask you to set username and email for git
+
 `ssh` requires you to create `/etc/ssh/ssh_host_include` in case you have per host configurations and to create the link yourself due to root the permissions.
 
 After the installation, create or edit your profile for your terminal emulator and select the font just installed.

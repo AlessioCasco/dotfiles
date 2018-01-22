@@ -1,0 +1,17 @@
+#!/bin/bash
+file="$HOME/.gitconfig-local"
+
+if [ ! -f "$file" ]
+then
+	echo "We are now going to populate the email and username to use for github"
+	echo "Please input the github email you want to use"
+	read email
+	echo "Please input the github username"
+	read username
+	echo "[user]\n\tmail = $email\n\tname = $username" > $file
+	echo "$file created"
+	exit 0
+else
+	2>&1 echo "$file found, please add your email & username manually if not done already, script will exit now"
+	exit 1
+fi
