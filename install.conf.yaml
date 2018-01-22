@@ -1,0 +1,39 @@
+- defaults:
+    link:
+      # create parent directory if necessary,
+      create: true
+      # overwrite incorrect symbolic links automatically
+      relink: true
+
+# specify directories that should be checked for dead symbolic links
+- clean: ['~', '~/.vim', '~/.oh-my-zsh']
+
+- link:
+    # zsh
+    ~/.zshrc: config/zshrc
+	# oh my zsh
+	~/.oh-my-zsh: config/oh-my-zsh
+	# powerlevel9k
+	~/.oh-my-zsh/custom/themes/powerlevel9k: config/powerlevel9k
+	# solarized-man
+    ~/.oh-my-zsh/custom/plugins: config/solarized-man
+    # vim
+	~/.vim/autoload: config/vim/autoload
+	~/.vim/bundle: config/vim/bundle
+	~/.vimrc: config/vim/vimrc
+	# git
+
+	# ssh manually managed due to permissions need
+
+
+# execute commands
+- shell:
+    -
+      # fonts
+      description: installing nerd-fonts (knack)
+      command: mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts && curl -fLo "Knack Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Knack%20Regular%20Nerd%20Font%20Complete.ttf\?raw=true
+      stderr: true
+    -
+      description: update submodules
+      command: git submodule update --init --recursive
+      stderr: true

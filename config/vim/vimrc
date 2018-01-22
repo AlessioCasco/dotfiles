@@ -1,0 +1,110 @@
+syn on
+
+" enable pathogen
+execute pathogen#infect()
+
+" small tuning for solarized
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+
+" ------ main config ------
+
+set autoread
+set fileformat=unix
+
+"set mouse=a "no scrolling
+
+"set nowrap " not linewrapping
+"set showbreak=↪  " no wrapping so no need it
+set backspace=2 " set backspace=indent,eol,start; basically lets you delete most any character
+set foldmethod=marker
+set laststatus=2 " always display the file status bar, even in command mode
+set ruler
+"set nu " show line numbers, don't care for now
+set showcmd
+
+set t_Co=256
+"hi Comment ctermfg=White ctermbg=Blue guifg=#80a0ff
+"set cursorline " highlighted line for current cursor
+"hi CursorLine cterm=NONE ctermbg=Black guibg=Black
+" ^^ only works for dark backgrounds
+
+set splitright "split on the right
+
+" default to using tabs, which span 4 columns
+set softtabstop=0 shiftwidth=4 tabstop=4 smarttab expandtab copyindent preserveindent
+"autoindent "Not sure about it yet
+
+" 4 spaces for Social Reader
+"autocmd BufNewFile,BufRead ~/labs/facebook-trove/* set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+" 2 spaces for MonetaJS
+"autocmd BufNewFile,BufRead ~/labs/monetajs/* set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+filetype indent on
+
+if has('autocmd')
+	filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+	syntax enable
+endif
+
+if has('autocmd')
+	filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+	syntax enable
+endif
+
+"delete trailing whitespace on save
+if has('autocmd')
+    autocmd BufWritePre * :%s/\s\+$//e
+endif
+
+" also highlight bad whitespace
+if has('autocmd')
+    highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+    match ExtraWhitespace /\s\+$\| \+\ze\t/
+    autocmd InsertLeave * redraw!
+endif
+
+
+"set backspace=indent,eol,start
+"set complete-=i
+set showmatch
+
+"set nrformats-=octal
+set shiftround
+
+set ttimeout
+set ttimeoutlen=50
+
+set ignorecase      " ignore case in search
+set incsearch       " do incremental searching
+
+" make tab completion of file names in command mode more like bash: http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
+set wildmode=longest,list,full
+set wildmenu
+
+
+if !&scrolloff
+	set scrolloff=1
+endif
+if !&sidescrolloff
+	set sidescrolloff=5
+endif
+set display+=lastline
+
+if &encoding ==# 'latin1' && has('gui_running')
+	set encoding=utf-8
+endif
+
+
+if &listchars ==# 'eol:$'
+	set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+	if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+		let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+	endif
+endif
