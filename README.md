@@ -1,6 +1,6 @@
 # Alessio's Dotfiles
 
-![Alt text]((/../images/screenshots/demo.gif?raw=true)
+![Alt text](/../images/screenshots/demo.gif?raw=true)
 
 ## Installation
 I use [dotbot](https://github.com/anishathalye/dotbot) to install everything.
@@ -41,4 +41,5 @@ Note that the installer is idempotent, so it is able to be run multiple times wi
 ##### system info scripts
 * [neofetch](https://github.com/dylanaraps/neofetch)
 
-#### GIF created with [peek](https://github.com/phw/peek)
+#### GIF created with
+* [peek](https://github.com/phw/peek)
