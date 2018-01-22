@@ -8,7 +8,7 @@ I use [dotbot](https://github.com/anishathalye/dotbot) to install everything.
 Copy and paste the following into your terminal/shell:
 
 `apt-get install zsh`
-`git clone git@github.com:AlessioCasco/dotfiles.git && cd dotfiles && ./install`
+`git clone --recursive git@github.com:AlessioCasco/dotfiles.git && cd dotfiles && ./install`
 
 `ssh` requires you to create `/etc/ssh/ssh_host_include` in case you have per host configurations and to create the link yourself due to root the permissions.
 
