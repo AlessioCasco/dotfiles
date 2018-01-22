@@ -34,9 +34,11 @@
       command: mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts && curl -fLo "Knack Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Knack%20Regular%20Nerd%20Font%20Complete.ttf\?raw=true
       stderr: true
     -
-      # generate the gitconfig-local
+      # generating the gitconfig-local
       description: generating the gitconfig-local file
       command: ./gitconfig-local-generator
+      stdin: true
+      stdout: true
       stderr: true
     -
       # updating the submodules
