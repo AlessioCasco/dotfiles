@@ -12,6 +12,6 @@ then
 	echo "$file created"
 	exit 0
 else
-	2>&1 echo "$file found, please add your email & username manually if not done already, script will exit now"
+	2>&1 echo -e "=====\n$file found, please add your email & username manually if not done already, script will exit now\n====="
 	exit 1
 fi
