@@ -6,7 +6,7 @@
       relink: true
 
 # specify directories that should be checked for dead symbolic links
-- clean: ['~', '~/.vim', '~/.oh-my-zsh']
+- clean: ['~', '~/.vim']
 
 - link:
     # zsh
