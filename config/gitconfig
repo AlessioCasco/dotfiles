@@ -2,7 +2,7 @@
 	private = yes
 
 [include]
-    path = .gitconfig-local
+    path = ~/.gitconfig-local
 
 [alias]
     a   = apply
