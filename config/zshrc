@@ -4,6 +4,17 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/alessio/.oh-my-zsh
 
+# Path for python & AWS CLI
+  export PATH=~/.local/bin:$PATH
+
+# Path for GO
+  # GOROOT is the location where Go package is installed on your system.
+  export GOROOT=/usr/local/go
+  # GOPATH is the location of your work directory
+  export GOPATH=$HOME/go
+  # PATH variable to access go binary system wide
+  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -89,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# kubectl autocompletion
+source <(kubectl completion zsh)
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -97,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias lg=git
 
 # enable nerdfonts
 POWERLEVEL9K_MODE='nerdfont-complete'
