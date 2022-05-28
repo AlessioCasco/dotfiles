@@ -6,15 +6,23 @@
       relink: true
 
 # specify directories that should be checked for dead symbolic links
-- clean: ['~', '~/.vim']
+# - clean: ['~', '~/.vim']
+- clean: ['~', '~/.vim', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+
+- shell:
+  -
+    # updating the submodules
+      description: update submodules
+      command: git submodule update --init --recursive
+      stderr: true
+
+  - [sh pre-install.sh, Running pre installation script]
 
 - link:
     # zsh
     ~/.zshrc: config/zshrc
-    # oh my zsh
-    ~/.oh-my-zsh: config/oh-my-zsh
-    # powerlevel9k
-    ~/.oh-my-zsh/custom/themes/powerlevel9k: config/powerlevel9k
+    # powerlevel10k
+    ~/.oh-my-zsh/custom/themes/powerlevel10k: config/powerlevel10k
     # solarized-man
     ~/.oh-my-zsh/custom/plugins/solarized-man: config/solarized-man
     # vim
@@ -31,7 +39,7 @@
     -
       # fonts
       description: installing nerd-fonts (knack)
-      command: mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts && curl -fLo "Knack Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf\?raw=true 2>&1
+      command: cd ~/Library/Fonts && curl -fLo "Hack Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf\?raw=true 2>&1
       stderr: true
     -
       # generating the gitconfig-local
@@ -40,8 +48,4 @@
       stdin: true
       stdout: true
       stderr: true
-    -
-      # updating the submodules
-      description: update submodules
-      command: git submodule update --init --recursive
-      stderr: true
+

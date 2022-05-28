@@ -2,18 +2,18 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/alessio/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Path for python & AWS CLI
-  export PATH=~/.local/bin:$PATH
+# export PATH=~/.local/bin:$PATH
 
 # Path for GO
-  # GOROOT is the location where Go package is installed on your system.
-  export GOROOT=/usr/local/go
-  # GOPATH is the location of your work directory
-  export GOPATH=$HOME/go
-  # PATH variable to access go binary system wide
-  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+# GOROOT is the location where Go package is installed on your system.
+# export GOROOT=/usr/local/go
+# GOPATH is the location of your work directory
+# export GOPATH=$HOME/go
+# PATH variable to access go binary system wide
+# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -24,7 +24,7 @@
 # Setting this variable when ZSH_THEME=random
 
 # select theme
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
@@ -111,13 +111,13 @@ source <(kubectl completion zsh)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lg=git
+alias g=git
 
 # enable nerdfonts
-POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_MODE='nerdfont-complete'
 
 # segments on the left prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user background_jobs dir_writable dir vcs status)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user background_jobs dir_writable dir status)
 # disable right prompt
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
