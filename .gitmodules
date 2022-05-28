@@ -4,15 +4,12 @@
 [submodule "config/vim/vim-pathogen"]
 	path = config/vim/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "config/vim/bundle/vim-colors-solarized"]
-	path = config/vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "config/oh-my-zsh"]
-	path = config/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
-[submodule "config/powerlevel9k"]
-	path = config/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "config/solarized-man"]
 	path = config/solarized-man
 	url = https://github.com/zlsun/solarized-man.git
+[submodule "config/vim/bundle/vim-colors-solarized"]
+	path = config/vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "config/powerlevel10k"]
+	path = config/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
